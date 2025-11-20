@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SPHERE66 | Workforce Training & Career Launch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SPHERE66 provides practical workforce training, career coaching, and hiring pipelines for adults entering or re-entering the job market." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --bg-alt: #ffffff;
+      --accent: #2563eb;
+      --accent-alt: #22c55e;
+      --text: #111827;
+      --text-soft: #6b7280;
+      --border-subtle: #e5e7eb;
+      --card-bg: #ffffff;
+      --pill: #e0edff;
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+      --nav-height: 80px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0f2fe 0, #f9fafb 45%, #eef2ff 100%);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Layout */
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(15,23,42,0.06);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-height);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+
+    .nav-badge {
+      font-size: 0.7rem;
+      padding: 0.28rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #1f2937;
+      background: #f3f4ff;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+      transition: width 0.22s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    /* Buttons */
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.25rem;
+      border: 1px solid transparent;
+      font-size: 0.86rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+    }
+
+    .btn-outline {
+      border-color: rgba(148,163,184,0.9);
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .btn-secondary {
+      border-color: rgba(37,99,235,0.35);
+      background: #e0edff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      padding: 0.42rem 1.05rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.18);
+    }
+
+    .btn span.chevron {
+      font-size: 1rem;
+      transform: translateY(0.5px);
+    }
+
+    /* Sections */
+
+    main > section {
+      padding: 3rem 0;
+    }
+
+    main > section:nth-of-type(even) {
+      background: #f9fafb;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: flex-end;
+    }
+
+    .section-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      max-width: 28rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3rem 0 3.4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.12rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      color: #075985;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.8rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4vw, 2.9rem);
+      line-height: 1.1;
+      margin: 0 0 0.8rem;
+      letter-spacing: -0.03em;
+      max-width: 32rem;
+      color: #0f172a;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(90deg, #1d4ed8, #16a34a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-soft);
+      max-width: 32rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .pill {
+      padding: 0.24rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: var(--pill);
+      border: 1px solid #dbeafe;
+      font-size: 0.72rem;
+      color: #1e3a8a;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .pill span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .hero-meta strong {
+      font-size: 0.9rem;
+      color: #111827;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #ffffff, #e0f2fe);
+      padding: 1.2rem 1.3rem 1rem;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .hero-status {
+      padding: 0.18rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-status span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .hero-card-footer {
+      margin-top: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      flex-wrap: wrap;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-tag {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+      gap: 2rem;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .about-card p { margin: 0.5rem 0; }
+
+    .about-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .metric {
+      padding: 0.7rem 0.85rem;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      box-shadow: 0 10px 25px rgba(15,23,42,0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.02rem;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+    }
+
+    /* Programs */
+
+    .program-intro {
+      margin-bottom: 1.6rem;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      max-width: 44rem;
+    }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 2.3fr);
+      gap: 2rem;
+    }
+
+    .program-nav {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.1rem 1.2rem;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .program-nav h3 {
+      margin: 0 0 0.4rem;
+      font-size: 0.96rem;
+      color: #111827;
+    }
+
+    .program-nav p {
+      margin: 0.25rem 0;
+    }
+
+    .program-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+
+    .program-nav-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .program-nav-list span.bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .program-groups {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .program-group-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.4rem;
+      align-items: baseline;
+      margin-bottom: 0.7rem;
+    }
+
+    .program-group-title {
+      font-size: 1rem;
+      margin: 0;
+      color: #0f172a;
+    }
+
+    .program-group-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      max-width: 26rem;
+      margin: 0;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1rem 1rem;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .card-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-title {
+      font-size: 0.96rem;
+      margin: 0;
+      color: #111827;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148,163,184,0.8);
+      color: var(--text-soft);
+      background: #f9fafb;
+      white-space: nowrap;
+    }
+
+    .badge-tech {
+      border-color: rgba(34,197,94,0.7);
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .badge-short {
+      border-color: rgba(148,163,184,0.8);
+    }
+
+    .card-body {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin: 0.1rem 0;
+    }
+
+    .card-meta {
+      font-size: 0.74rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .card-actions {
+      margin-top: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      font-size: 0.76rem;
+      color: #166534;
+    }
+
+    /* Impact & Testimonials */
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.8fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .stat {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 0.95rem;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-number {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--accent-alt);
+      margin-bottom: 0.05rem;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin-bottom: 0.3rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.9rem 1rem;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-meta {
+      font-size: 0.76rem;
+      color: #6b7280;
+    }
+
+    /* ITSP */
+
+    .itsp-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .itsp-main {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    .itsp-main h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.98rem;
+      color: #111827;
+    }
+
+    .itsp-main p { margin: 0.4rem 0; }
+
+    .itsp-bullets {
+      list-style: none;
+      margin: 0.5rem 0 0.2rem;
+      padding: 0;
+      font-size: 0.86rem;
+    }
+
+    .itsp-bullets li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .itsp-bullets li::before {
+      content: "•";
+      color: var(--accent-alt);
+      margin-top: 0.05rem;
+    }
+
+    .itsp-side {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .itsp-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 0.95rem;
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .itsp-card strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #111827;
+    }
+
+    /* Remote Delivery */
+
+    .remote-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .remote-main {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    .remote-main h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 0.98rem;
+      color: #111827;
+    }
+
+    .remote-bullets {
+      list-style: none;
+      margin: 0.5rem 0 0.2rem;
+      padding: 0;
+      font-size: 0.86rem;
+    }
+
+    .remote-bullets li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .remote-bullets li::before {
+      content: "•";
+      color: var(--accent);
+      margin-top: 0.05rem;
+    }
+
+    /* Employers */
+
+    .employers-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .list li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-top: 0.08rem;
+    }
+
+    .stacked-cards {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .mini-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 0.95rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem 0.65rem;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.84rem;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.3);
+    }
+
+    #form-status {
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      min-height: 1em;
+    }
+    #form-status.success {
+      color: #166534;
+    }
+    #form-status.error {
+      color: #b91c1c;
+    }
+
+    .support-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(148,163,184,0.5);
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .tagline {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .program-layout,
+      .impact-grid,
+      .itsp-layout,
+      .remote-grid,
+      .employers-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .impact-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      main > section { padding: 2.4rem 0; }
+      .hero-title { font-size: 2.1rem; }
+      .hero-visual img { height: 200px; }
+      .section-title { font-size: 1.35rem; }
+      .programs-grid,
+      .impact-stats {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="#top" class="nav-logo">
+        <img src="sphere66-logo.png" alt="SPHERE66 logo" />
+        <div class="nav-title"></div>
+      </a>
+      <div class="nav-badge">      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#impact">Impact</a>
+      <a href="#itsp">Tech Support</a>
+      <a href="#remote">Remote Delivery</a>
+      <a href="#employers">Employers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-outline">Partner</a>
+      <a href="#programs" class="btn btn-primary">
+        Get Started <span class="chevron">↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Future-ready talent
+        </div>
+        <h1 class="hero-title">
+          Job-ready training with <span class="highlight">real hiring outcomes.</span>
+        </h1>
+        <p class="hero-subtitle">
+          SPHERE66 helps adults build practical skills, get coached on the job search,
+          and connect with employers who are ready to hire.
+        </p>
+        <div class="hero-pills">
+          <div class="pill"><span class="dot"></span>Short, focused programs</div>
+          <div class="pill"><span class="dot"></span>Career coaching</div>
+          <div class="pill"><span class="dot"></span>Employer pipelines</div>
+        </div>
+        <div class="hero-cta">
+          <a href="#programs" class="btn btn-primary">
+            View programs <span class="chevron">⟶</span>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            Talk to our team
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <strong>Flexible delivery</strong><br>
+            Virtual, on-site, and hybrid cohorts.
+          </div>
+          <div>
+            <strong>Tech-enabled tracks</strong><br>
+            Select pathways include device support.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-card-title">Digital Careers Cohort</div>
+              <div style="font-size:0.78rem;color:var(--text-soft);">IT Support &amp; Office Skills</div>
+            </div>
+            <div class="hero-status">
+              <span class="dot"></span>
+              Active · Week 3
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" alt="Learners in a digital classroom" />
+          </div>
+          <div class="hero-card-footer">
+            <div class="hero-tags">
+              <div class="hero-tag">Hands-on labs</div>
+              <div class="hero-tag">Career coaching</div>
+              <div class="hero-tag">Tech support</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:0.72rem;color:var(--text-soft);">Next start</div>
+              <div style="font-size:0.9rem;">Monthly · Small groups</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">Training built around real jobs.</h2>
+        </div>
+        <p class="section-subtitle">
+          We design short programs that match local hiring needs, then guide learners from first class to first day on the job.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <p>SPHERE66 runs structured training and job-search support for adults who want stable work and room to grow.</p>
+          <p>Agencies, workforce boards, and employers plug into our programs to give their communities a clear, guided path to employment.</p>
+        </div>
+        <div class="about-metrics">
+          <div class="metric">
+            <strong>3+ years</strong>
+            Delivering cohort-based workforce training.
+          </div>
+          <div class="metric">
+            <strong>84%+</strong>
+            Average completion rate across programs.
+          </div>
+          <div class="metric">
+            <strong>70%+</strong>
+            Learners working or advancing within 90 days.
+          </div>
+          <div class="metric">
+            <strong>95%</strong>
+            Would recommend SPHERE66 to a friend.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Programs</div>
+          <h2 class="section-title">Career launch &amp; career pathway tracks.</h2>
+        </div>
+        <p class="section-subtitle">
+          Short launch courses for quick wins. Longer pathway programs for deeper skills and better pay.
+        </p>
+      </div>
+
+      <p class="program-intro">
+        Many learners join through public or community programs. Our structure, attendance, and reporting are built to fit that world.
+      </p>
+
+      <div class="program-layout">
+        <aside class="program-nav">
+          <h3>Program structure</h3>
+          <p>Every SPHERE66 program includes:</p>
+          <ul class="program-nav-list">
+            <li><span class="bullet"></span>Live classes and guided practice</li>
+            <li><span class="bullet"></span>Clear start and end dates</li>
+            <li><span class="bullet"></span>Career coaching and job-search tasks</li>
+            <li><span class="bullet"></span>Completion documentation for partners</li>
+          </ul>
+          <p style="margin-top:0.6rem;font-size:0.8rem;">
+            For laptop-eligible tracks, see the
+            <a href="#itsp" style="color:var(--accent);text-decoration:underline;">Integrated Technology Support</a>
+            section.
+          </p>
+        </aside>
+
+        <div class="program-groups">
+          <!-- Career Launch Courses -->
+          <div>
+            <div class="program-group-header">
+              <h3 class="program-group-title">Career Launch Courses</h3>
+              <p class="program-group-subtitle">
+                Fast, practical courses that help learners move into entry-level roles.
+              </p>
+            </div>
+
+            <div class="programs-grid">
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Job Search &amp; Professional Readiness</h4>
+                  <span class="badge badge-short">4–6 weeks</span>
+                </div>
+                <p class="card-body">
+                  Resumes, interviews, and online applications with weekly coaching.
+                </p>
+                <div class="card-meta">
+                  <span>Virtual</span>
+                  <span>Great first step</span>
+                </div>
+                <div class="card-actions">
+                  <span>Resume + mock interview lab</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Office &amp; Digital Skills</h4>
+                  <span class="badge badge-short">6–8 weeks</span>
+                </div>
+                <p class="card-body">
+                  Email, docs, spreadsheets, and basic collaboration tools.
+                </p>
+                <div class="card-meta">
+                  <span>Virtual or on-site</span>
+                  <span>Admin &amp; remote roles</span>
+                </div>
+                <div class="card-actions">
+                  <span>Project-based practice</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Customer Service Essentials</h4>
+                  <span class="badge badge-short">5–6 weeks</span>
+                </div>
+                <p class="card-body">
+                  Service mindset, call scripts, and basic CRM use.
+                </p>
+                <div class="card-meta">
+                  <span>Retail &amp; contact centers</span>
+                  <span>Live practice calls</span>
+                </div>
+                <div class="card-actions">
+                  <span>Interview day with partners</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Logistics &amp; Warehouse Basics</h4>
+                  <span class="badge badge-short">4–6 weeks</span>
+                </div>
+                <p class="card-body">
+                  Safety, inventory, and shipping/receiving flow.
+                </p>
+                <div class="card-meta">
+                  <span>On-site labs</span>
+                  <span>Forklift add-on optional</span>
+                </div>
+                <div class="card-actions">
+                  <span>Built with logistics employers</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Healthcare Support Basics</h4>
+                  <span class="badge badge-short">6–8 weeks</span>
+                </div>
+                <p class="card-body">
+                  Front desk, scheduling, and patient communication.
+                </p>
+                <div class="card-meta">
+                  <span>Clinic &amp; hospital entry</span>
+                  <span>Feeds into office pathways</span>
+                </div>
+                <div class="card-actions">
+                  <span>Great health-care starter</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Hospitality &amp; Guest Service</h4>
+                  <span class="badge badge-short">4–5 weeks</span>
+                </div>
+                <p class="card-body">
+                  Guest experience skills for hotels, events, and venues.
+                </p>
+                <div class="card-meta">
+                  <span>Evening options</span>
+                  <span>Local hospitality partners</span>
+                </div>
+                <div class="card-actions">
+                  <span>Ideal for people-first roles</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Career Pathway Programs -->
+          <div>
+            <div class="program-group-header">
+              <h3 class="program-group-title">Career Pathway Programs</h3>
+              <p class="program-group-subtitle">
+                Deeper tracks with credentials and, in some cases, laptop support.
+              </p>
+            </div>
+
+            <div class="programs-grid">
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">IT Support Technician</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Hardware, software, and troubleshooting skills for helpdesk roles.
+                </p>
+                <div class="card-meta">
+                  <span>12–16 weeks</span>
+                  <span>CompTIA A+ aligned</span>
+                </div>
+                <div class="card-actions">
+                  <span>Great for entry IT careers</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Cloud &amp; Systems Foundations</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Intro cloud, identity, and monitoring for junior admin roles.
+                </p>
+                <div class="card-meta">
+                  <span>14–18 weeks</span>
+                  <span>Hands-on labs</span>
+                </div>
+                <div class="card-actions">
+                  <span>Step toward cloud careers</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Medical Office &amp; Patient Access</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Scheduling, EHR navigation, and front-office workflows.
+                </p>
+                <div class="card-meta">
+                  <span>12–16 weeks</span>
+                  <span>Clinic &amp; hospital ready</span>
+                </div>
+                <div class="card-actions">
+                  <span>Built with health partners</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Business &amp; Data Support</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Spreadsheets, dashboards, and basic SQL for analyst support.
+                </p>
+                <div class="card-meta">
+                  <span>14–18 weeks</span>
+                  <span>Portfolio of reports</span>
+                </div>
+                <div class="card-actions">
+                  <span>Operations &amp; data roles</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Executive Assistant Pathway</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Calendar, inbox, and project coordination for office careers.
+                </p>
+                <div class="card-meta">
+                  <span>10–14 weeks</span>
+                  <span>Capstone project</span>
+                </div>
+                <div class="card-actions">
+                  <span>High-trust admin roles</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <h4 class="card-title">Connected Device Support</h4>
+                  <span class="badge badge-tech">Laptop-eligible track</span>
+                </div>
+                <p class="card-body">
+                  Support skills for smart-home and connected hardware.
+                </p>
+                <div class="card-meta">
+                  <span>10–14 weeks</span>
+                  <span>Simulated queues</span>
+                </div>
+                <div class="card-actions">
+                  <span>Remote tech support roles</span>
+                  <a href="#intake-form" class="btn btn-secondary">Enroll now</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact & Testimonials -->
+  <section id="impact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Impact</div>
+          <h2 class="section-title">Results partners care about.</h2>
+        </div>
+        <p class="section-subtitle">
+          Clean reporting and strong outcomes make SPHERE66 easy to plug into existing programs.
+        </p>
+      </div>
+
+      <div class="impact-grid">
+        <div>
+          <div class="impact-stats">
+            <div class="stat">
+              <div class="stat-label">Completion</div>
+              <div class="stat-number">84%</div>
+              <div>Learners finishing their selected track.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Employment</div>
+              <div class="stat-number">71%</div>
+              <div>Working or advancing within 90 days.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Credentials</div>
+              <div class="stat-number">86%</div>
+              <div>Pathway learners earning at least one credential.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Satisfaction</div>
+              <div class="stat-number">95%</div>
+              <div>Would recommend SPHERE66 to others.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              “SPHERE66 made referrals simple and transparent. Our staff could see who started,
+              who finished, and where they landed. It feels like an extension of our own program
+              instead of ‘just another vendor’.”
+            </div>
+            <div class="testimonial-meta">
+              Workforce Program Manager · Public Workforce Board
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              “We first partnered with SPHERE66 for a small customer service cohort. The quality was
+              high, the candidates were prepared, and the reporting was tight. We’ve since added IT
+              and office tracks to our hiring pipeline.”
+            </div>
+            <div class="testimonial-meta">
+              Director of Talent Acquisition · Regional Employer
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              “I had been stuck sending applications into a void. The program gave me structure,
+              feedback, and the confidence to speak about my skills. Within two months of
+              graduating I started a full-time role with benefits.”
+            </div>
+            <div class="testimonial-meta">
+              Program Graduate · Administrative &amp; Digital Careers
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrated Technology Support Program -->
+  <section id="itsp">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Integrated Technology Support</div>
+          <h2 class="section-title">Laptop-ready tracks for digital careers.</h2>
+        </div>
+        <p class="section-subtitle">
+          For selected pathway programs, eligible learners can finish with both skills and the tech to use them.
+        </p>
+      </div>
+
+      <div class="itsp-layout">
+        <div class="itsp-main">
+          <h3>What the program includes</h3>
+          <p>In designated laptop-eligible tracks, qualifying learners may receive:</p>
+          <ul class="itsp-bullets">
+            <li>A current laptop prepared for training and job search</li>
+            <li>Core software for email, video calls, and documents</li>
+            <li>Guidance on safe use, updates, and storage</li>
+            <li>Tips for affordable internet and local access points</li>
+          </ul>
+
+          <h3 style="margin-top:1rem;">Why it matters</h3>
+          <ul class="itsp-bullets">
+            <li>No more missed classes because a computer wasn’t available</li>
+            <li>Online applications and assessments can be done from home</li>
+            <li>Remote roles and hybrid jobs become realistic options</li>
+            <li>Learners can keep practicing and learning after graduation</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;font-size:0.8rem;">
+            Eligibility, device details, and distribution are set with each funding or referral partner.
+            Laptop support is tied to full completion of specific pathway programs, not every course.
+          </p>
+        </div>
+
+        <div class="itsp-side">
+          <div class="itsp-card">
+            <strong>For learners</strong>
+            <ul class="itsp-bullets">
+              <li>Clear expectations from day one</li>
+              <li>Help setting up the device and accounts</li>
+              <li>Support in using the laptop for interviews and onboarding</li>
+            </ul>
+          </div>
+          <div class="itsp-card">
+            <strong>For agencies &amp; workforce boards</strong>
+            <ul class="itsp-bullets">
+              <li>Documented eligibility and distribution</li>
+              <li>Simple reporting to match your rules</li>
+              <li>Better completion and employment numbers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remote Delivery -->
+  <section id="remote">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Remote Delivery</div>
+          <h2 class="section-title">Built to work online and on paper.</h2>
+        </div>
+        <p class="section-subtitle">
+          We use consistent tools, clear structure, and tracked engagement so virtual cohorts stay strong and funder-friendly.
+        </p>
+      </div>
+
+      <div class="remote-grid">
+        <div class="remote-main">
+          <h3>How our remote model works</h3>
+          <ul class="remote-bullets">
+            <li>Live sessions delivered through a stable, browser-based platform</li>
+            <li>Small groups with cameras-on expectations and check-ins</li>
+            <li>Attendance, progress, and assignments captured in one system</li>
+            <li>Recordings and slides shared for learners who need review</li>
+          </ul>
+
+          <h3 style="margin-top:1rem;">Accessibility &amp; design choices</h3>
+          <ul class="remote-bullets">
+            <li>Low-bandwidth options and dial-in access when needed</li>
+            <li>Captioning tools and screen-friendly handouts</li>
+            <li>Simple links and calendars instead of complex portals</li>
+            <li>Device checks at the start of each cohort</li>
+          </ul>
+
+          <p style="margin-top:0.8rem;font-size:0.8rem;">
+            The structure is built to line up with public workforce expectations: clear schedules,
+            defined hours, and documentation that shows who attended, who completed, and what was covered.
+          </p>
+        </div>
+
+        <div class="stacked-cards">
+          <div class="mini-card">
+            <strong>For learners</strong>
+            Remote classes run at predictable times with clear reminders, simple log-in steps, and easy ways to ask for help.
+          </div>
+          <div class="mini-card">
+            <strong>For partners</strong>
+            You receive attendance, engagement notes, and completion data that support compliance, monitoring, and audits.
+          </div>
+          <div class="mini-card">
+            <strong>For employers</strong>
+            Remote learning builds comfort with video calls, online tools, and digital communication — skills most modern workplaces expect.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Employers -->
+  <section id="employers">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Employers</div>
+          <h2 class="section-title">A steady pipeline of prepared talent.</h2>
+        </div>
+        <p class="section-subtitle">
+          We train to your roles and bring candidates to you at the end of each cohort.
+        </p>
+      </div>
+
+      <div class="employers-grid">
+        <div>
+          <h3 style="font-size:1rem;margin-top:0;">What you get</h3>
+          <ul class="list">
+            <li>Candidates trained on your tools and expectations</li>
+            <li>Interview days built into the program calendar</li>
+            <li>Consistent feedback loops on performance</li>
+            <li>Options for internships, job-shadowing, or pre-hire trials</li>
+          </ul>
+        </div>
+
+        <div class="stacked-cards">
+          <div class="mini-card">
+            <strong>Customer-facing roles</strong>
+            Perfect for contact centers, hospitality, and healthcare front-line teams.
+          </div>
+          <div class="mini-card">
+            <strong>Digital &amp; technical roles</strong>
+            Pathway graduates in IT, cloud, data, and office tracks arrive with real project work.
+          </div>
+          <div class="mini-card">
+            <strong>Regional coverage</strong>
+            Blended virtual and on-site delivery lets us serve multiple locations consistently.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Intake -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header-left">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Start a conversation with SPHERE66.</h2>
+        </div>
+        <p class="section-subtitle">
+          Use the form to explore a cohort, refer learners, or build a hiring pathway.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div id="intake-form">
+          <!-- Formspree-integrated form -->
+          <form id="sphere66-form" action="https://formspree.io/f/manvdqdn" method="POST">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="name@example.org" required />
+            </div>
+            <div>
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" type="tel" name="phone" placeholder="(555) 123-4567" />
+            </div>
+            <div>
+              <label for="role">I am a...</label>
+              <select id="role" name="role" required>
+                <option value="">Select one</option>
+                <option value="Prospective learner">Prospective learner</option>
+                <option value="Agency / community partner">Agency / community partner</option>
+                <option value="Workforce board / public program">Workforce board / public program</option>
+                <option value="Employer / recruiter">Employer / recruiter</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="interest">Programs of interest</label>
+              <input id="interest" type="text" name="interest" placeholder="Example: IT Support, Customer Service, Data Support" />
+            </div>
+            <div>
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" placeholder="Share a bit about your goals and timeline."></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Submit form</button>
+              <div id="form-status"></div>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="mini-card">
+            <strong>What happens next</strong>
+            <p class="support-text">
+              We’ll review your note and follow up with:
+            </p>
+            <ul class="list" style="margin-top:0.3rem;">
+              <li>A quick call option</li>
+              <li>Sample program outlines</li>
+              <li>Reporting examples for your team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div style="font-weight:600;">SPHERE66</div>
+      <div class="tagline">Workforce Training · Career Navigation · Talent Pipelines</div>
+    </div>
+    <div class="footer-links">
+      <span>© <span id="year"></span> SPHERE66. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Formspree AJAX submission for inline "Inquiry submitted" message
+  const form = document.getElementById("sphere66-form");
+  const statusEl = document.getElementById("form-status");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    statusEl.textContent = "Sending...";
+    statusEl.className = "";
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        form.reset();
+        statusEl.textContent = "Inquiry submitted. We’ll be in touch shortly.";
+        statusEl.className = "success";
+      } else {
+        statusEl.textContent = "Something went wrong. Please try again, or email us directly.";
+        statusEl.className = "error";
+      }
+    } catch (error) {
+      statusEl.textContent = "Network error. Please check your connection and try again.";
+      statusEl.className = "error";
+    }
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
+
+</body>
+</html>
